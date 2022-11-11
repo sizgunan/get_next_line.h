@@ -6,7 +6,7 @@
 /*   By: sizgunan <sizgunan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/05 11:13:18 by sizgunan          #+#    #+#             */
-/*   Updated: 2022/11/09 19:30:29 by sizgunan         ###   ########.fr       */
+/*   Updated: 2022/11/11 10:59:58 by sizgunan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,6 @@ char	*ft_substr(char *s, size_t start, size_t len)
 	p[i] = '\0';
 	return (p);
 }
-
 
 char	*ft_strjoin(char *s1, char *s2)
 {
