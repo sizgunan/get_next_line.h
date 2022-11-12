@@ -6,7 +6,7 @@
 /*   By: sizgunan <sizgunan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/05 11:13:18 by sizgunan          #+#    #+#             */
-/*   Updated: 2022/11/11 10:59:58 by sizgunan         ###   ########.fr       */
+/*   Updated: 2022/11/12 18:50:10 by sizgunan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,21 +62,19 @@ char	*ft_substr(char *s, size_t start, size_t len)
 	size_t		i;
 
 	i = 0;
-	if (s == NULL)
-		return (NULL);
-	if (len > ft_strlen(s))
-		len = ft_strlen(s) - start;
-	if (start > ft_strlen(s))
-		return (ft_strdup(""));
-	p = (char *)malloc((len + 1) * sizeof(char));
+	p = malloc(sizeof(char) * (len + 1));
 	if (!p)
+	{
+		free (s);
 		return (NULL);
+	}
 	while (i < len)
 	{
 		p[i] = s[start + i];
 		i++;
 	}
-	p[i] = '\0';
+	p[len] = '\0';
+	free (s);
 	return (p);
 }
 
@@ -103,5 +101,6 @@ char	*ft_strjoin(char *s1, char *s2)
 	while (i < len && s2[j])
 		p[i++] = s2[j++];
 	p[i] = '\0';
+	free(s1);
 	return (p);
 }
